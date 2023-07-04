@@ -23,7 +23,7 @@ To run the Mohi's Bot project, you need to ensure the following prerequisites ar
   ```
   pip install flask
   ```
-- **Neo4j**: Install Neo4j, a graph database, by following the installation instructions provided on the official Neo4j website: [https://neo4j.com/download/](https://neo4j.com/download/).
+- **Neo4j**: Install Neo4j, a graph database, by following the installation instructions provided on the official Neo4j website: [https://neo4j.com/download/](https://neo4j.com/download/). Make sure to configure the appropriate username and password for your Neo4j instance.
 - **Prolog**: Install a Prolog interpreter, such as SWI-Prolog, on your system. Instructions for different platforms can be found on the official SWI-Prolog website: [http://www.swi-prolog.org/Download.html](http://www.swi-prolog.org/Download.html). Additionally, install the `pyswip` package using the following command:
   ```
   pip install pyswip
