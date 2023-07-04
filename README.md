@@ -78,7 +78,7 @@ Before running the chatbot, you may need to modify the configuration settings in
 
 ## Documentation
 
-For detailed documentation and usage instructions, refer to the [documentation](documentation.md) file in this repository.
+For detailed documentation and usage instructions, refer to the [Documentation](Documentation.pdf) file in this repository.
 
 ## Acknowledgements
 
