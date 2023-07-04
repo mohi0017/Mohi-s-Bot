@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mohi_Bot</title>
+    <link
+      href="{{ url_for('static',filename='css/login.css') }}"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    style="background: url('{{ url_for('static', filename='images/4.jpg') }}'); background-repeat: no-repeat; background-size: cover;"
+  >
+    <div id="loginimage">
+      <img src="{{ url_for('static',filename='images/bot.png')}}" />
+    </div>
+    <form id="signup_form" method="post" action="signup">
+      <h2>Sign Up</h2>
+      <label>Name</label><br />
+      <input
+        type="text"
+        class="form-control"
+        id="username"
+        name="username"
+        required
+      /><br />
+      <label>Email</label><br />
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        name="email"
+        required
+      /><br />
+      <label>Password</label><br />
+      <input
+        type="password"
+        class="form-control"
+        id="pass1"
+        name="pass1"
+        minlength="8"
+        required
+      /><br /><br />
+      <input
+        type="submit"
+        class="btn btn-primary btn-block btn-lg"
+        value="Submit"
+      />
+      <p class="mt-2">
+        Already a member? &nbsp;<a id="linktosignup" href="/getlogin">Login here</a>
+      </p>
+    </form>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+<aiml>
+
+<!-- Free software (c) 2001 ALICE AI Foundation -->
+<!-- This program is open source code released under -->
+<!-- the terms of the GNU General Public License -->
+<!-- as published by the Free Software Foundation. -->
+
+<meta name="author" content="Jon Baer"/>
+<meta name="language" content="en"/>
+
+<category>
+<pattern>CONNECT</pattern>
+<template>
+<think><set name="that">CONNECT</set></think>
+     Hello there <get name="name"/> and thanks for connecting!
+</template>
+</category>
+
+</aiml>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome Page</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      background: linear-gradient(45deg, #295cc2, #FFD166);
+      transition: background 0.5s ease;
+      animation: pulse 2s infinite;
+    }
+    
+    h1 {
+      font-family: 'Arial', sans-serif;
+      font-size: 36px;
+      color: #333333;
+      transition: color 0.5s ease;
+      animation: colorChange 5s infinite;
+    }
+    
+    p {
+      font-family: 'Arial', sans-serif;
+      font-size: 18px;
+      color: #555555;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    .mt-2 {
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.5s ease;
+      border-radius: 20px;
+    }
+    
+    .mt-2:hover {
+      background-color: #45a049;
+    }
+    #linktosignup {
+      text-decoration: none;
+      color: white;
+    }
+
+    #linktosignup:hover {
+      font-weight: bolder;
+      text-decoration: none;
+      color: white;
+    }
+    
+    @keyframes pulse {
+      0% {
+        background: linear-gradient(180deg, #295cc2, #FFD166);
+      }
+      50% {
+        background: linear-gradient(45deg, #FFD166, #694d87);
+      }
+      100% {
+        background: linear-gradient(270deg, #5d9494, #FFD166);
+      }
+    }
+    
+    @keyframes colorChange {
+      0% {
+        color: #333333;
+      }
+      50% {
+        color: #555555;
+      }
+      100% {
+        color: #333333;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to Mohi's Bot </h1>
+  <p>There's a unique comfort in chatting with a familiar bot, where the conversation flows effortlessly, like catching up with a trusted companion.</p>
+  <p class="mt-2"><a id="linktosignup" href="/registration">Sign up</a></p>
+  <p class="mt-2">
+  <a id="linktosignup" href="/getlogin">Login here</a>
+  </p>
+
+</body>
+</html>

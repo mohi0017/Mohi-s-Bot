@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mohi_Bot</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet prefetch"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css"
+    />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(
+          45deg,
+          #f8b195,
+          #f67280,
+          #c06c84,
+          #6c5b7b,
+          #355c7d
+        );
+        background-size: 800% 800%;
+        animation: gradientAnimation 15s ease infinite;
+        display:flex;
+      }
+
+      @keyframes gradientAnimation {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      #frame {
+        width: 70%;
+        min-width: 360px;
+        max-width: 1000px;
+        height: 92vh;
+        min-height: 300px;
+        max-height: 720px;
+        background: #e6eaea;
+        border-radius: 20px;
+        border: 1px solid red;
+      }
+
+      @media screen and (max-width: 360px) {
+        #frame {
+          width: 100%;
+          height: 100vh;
+        }
+      }
+
+      #frame #sidepanel {
+        border-radius: 20px;
+        font-family: Arial, sans-serif;
+        width: 100%;
+        height: 10%;
+        display: flex;
+        flex-direction: column;
+        background: linear-gradient(
+          45deg,
+          #ff7f50,
+          #ff1493,
+          #da70d6,
+          #663399,
+          #4169e1
+        );
+        animation-name: myAnimation;
+        animation-duration: 5s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+      }
+
+      @keyframes myAnimation {
+        0% {
+          font-size: 10px;
+          color: white;
+          background: linear-gradient(
+            45deg,
+            #ff7f50,
+            #ff1493,
+            #da70d6,
+            #663399,
+            #4169e1
+          );
+        }
+        25% {
+          background: linear-gradient(
+            45deg,
+            #ff1493,
+            #da70d6,
+            #4169e1,
+            #ff7f50
+          );
+        }
+        50% {
+          font-size: 16px;
+          color: yellow;
+          background: linear-gradient(
+            45deg,
+            #663399,
+            #ff7f50,
+            #da70d6,
+            #ff1493
+          );
+        }
+      }
+
+      @media screen and (max-width: 735px) {
+        #frame #sidepanel #profile {
+          width: 100%;
+          margin: 0 auto;
+          padding: 5px 0 0 0;
+        }
+      }
+
+      #frame #sidepanel #profile h2 {
+        opacity: 1;
+        animation-name: showHeading;
+        animation-duration: 0s;
+        animation-delay: 5s;
+        animation-fill-mode: forwards;
+      }
+
+      @keyframes showHeading {
+        0% {
+          opacity: 0;
+          display: none;
+        }
+        30% {
+          opacity: 1;
+          display: block;
+        }
+        100% {
+          opacity: 0;
+          display: none;
+          height: 0;
+        }
+      }
+
+      #frame #sidepanel #profile {
+        display: flex;
+      }
+
+      #frame #sidepanel #profile #Bot_Gif {
+        width: 7%;
+        mix-blend-mode: multiply;
+        animation: imageAnimation 5s ease infinite;
+      }
+
+      #frame #sidepanel #profile #Bot_Gif1 {
+        width: 7%;
+        border-radius: 30px;
+        margin-left: 70%;
+        mix-blend-mode: multiply;
+        animation: imageAnimationReverse 5s ease infinite;
+      }
+
+      @keyframes imageAnimation {
+        0% {
+          transform: rotate(0deg);
+        }
+        50% {
+          transform: rotate(180deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes imageAnimationReverse {
+        0% {
+          transform: rotate(0deg);
+        }
+        50% {
+          transform: rotate(-180deg);
+        }
+        100% {
+          transform: rotate(-360deg);
+        }
+      }
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: calc(100% - 15%);
+      }
+
+      .messages {
+        flex-grow: 1;
+        padding: 47px;
+        overflow-y: auto;
+      }
+
+      #userInput {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin-bottom: -50px;
+        background: #ffffff;
+        border: 1px solid #cfd8dc;
+        border-radius: 20px;
+      }
+
+      #userInput input[type="text"] {
+        flex-grow: 1;
+        padding: 12px;
+        border: none;
+        outline: none;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        transition: background-color 0.3s ease;
+      }
+
+      #userInput .submit {
+        padding: 11px 13px;
+        background: linear-gradient(
+          45deg,
+          #ff7f50,
+          #ff1493,
+          #da70d6,
+          #663399,
+          #4169e1
+        );
+        border: none;
+        outline: none;
+        cursor: pointer;
+        color: #ffffff;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        transition: background-color 0.3s ease;
+      }
+
+      #userInput .submit:hover {
+        background: linear-gradient(
+          45deg,
+          #4169e1,
+          #663399,
+          #da70d6,
+          #ff1493,
+          #ff7f50
+        );
+      }
+
+      #frame .content .messages {
+        height: auto;
+        min-height: calc(100% - 93px);
+        max-height: calc(100% - 93px);
+        overflow-y: scroll;
+        overflow-x: hidden;
+      }
+
+      @media screen and (max-width: 735px) {
+        #frame .content .messages {
+          max-height: calc(100% - 105px);
+        }
+      }
+
+      #frame .content .messages::-webkit-scrollbar {
+        width: 8px;
+        background: transparent;
+      }
+
+      #frame .content .messages::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0.3);
+      }
+
+      #frame .content .messages ul li {
+        display: inline-block;
+        clear: both;
+        float: left;
+        margin: -54px 15px 40px -68px;
+        width: calc(100% - -105px);
+        font-size: 0.9em;
+      }
+
+      #frame .content .messages ul li.sent img {
+        margin: 0px;
+      }
+
+      #frame .content .messages ul li.sent p {
+        background: #5e5b7c;
+        color: #f5f5f5;
+      }
+
+      #frame .content .messages ul li.replies img {
+        float: right;
+        margin: 2px 0 0 8px;
+      }
+
+      #frame .content .messages ul li.replies p {
+        background: #f5f5f5;
+        float: right;
+        color: #000000;
+      }
+
+      #frame .content .messages ul li img {
+        width: 22px;
+        border-radius: 50%;
+        float: left;
+      }
+
+      #frame .content .messages ul li p {
+        display: inline-block;
+        padding: 10px 15px;
+        border-radius: 20px;
+        max-width: 205px;
+        line-height: 130%;
+        border: 1px solid black;
+      }
+
+      @media screen and (min-width: 735px) {
+        #frame .content .messages ul li p {
+          max-width: 300px;
+        }
+      }
+      .live-Graph {
+        background-color: black;
+        border-radius: 10px;
+        width: 40%;
+        height: 100%;
+        margin-top: 190px;
+        margin-left: 10%;
+        animation: fadeAnimation 3s ease-in-out infinite alternate;
+        border: 1px solid red;
+      }
+
+      @keyframes fadeAnimation {
+        0% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.5;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="frame">
+      <div id="sidepanel">
+        <div id="profile">
+          <img
+            id="Bot_Gif"
+            src="{{ url_for('static', filename='images/4.gif') }}"
+          />
+          <div class="wrap">
+            <p>Mohi's Bot</p>
+          </div>
+          <img
+            id="Bot_Gif1"
+            src="{{ url_for('static', filename='images/2.gif') }}"
+          />
+        </div>
+      </div>
+      <div class="content">
+        <div class="messages">
+          <ul>
+          <li class="replies">
+            <img src="{{ url_for('static', filename='images/bot.png') }}">
+          <p>{{msg}}</p>
+        </li>
+          </ul>
+        </div>
+        <div class="message-input">
+          <div class="wrap">
+            <div id="userInput">
+              <input
+                id="textInput"
+                type="text"
+                name="msg"
+                placeholder="Write your message..."
+              />
+              <button class="submit">
+                <i class="fa fa-paper-plane" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="live-Graph">
+      <canvas id="liveGraph"></canvas>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1"></script>
+    <script>
+      function appendUserMessage(message) {
+        $('<li class="sent"><img src="' + "{{ url_for('static', filename='images/user.jpeg') }}" + '"><p>' + message + '</p></li>').appendTo($(".messages ul"));
+      }
+      function appendBotMessage(message) {
+        $('<li class="replies"><img src="{{ url_for('static', filename='images/bot.png') }}"><p>' + message + '</p></li>').appendTo($(".messages ul"));
+      }
+      function sendMessage() {
+        var message = $("#textInput").val();
+        if ($.trim(message) === "") {
+          return false;
+        }
+        appendUserMessage(message);
+        $("#textInput").val("");
+        $(".messages").animate(
+          { scrollTop: $(".messages").prop("scrollHeight") },
+          "fast"
+        );
+          $.get("/get", { msg: message }).done(function (data) {
+          appendBotMessage(data[0]);
+          updateGraph(data[1])
+          $(".messages").animate(
+            { scrollTop: $(".messages").prop("scrollHeight") },
+            "fast"
+          );
+        });
+      }
+      $(".submit").click(function () {
+        sendMessage();
+      });
+
+      $(window).on("keydown", function (e) {
+        if (e.which === 13) {
+          sendMessage();
+          return false;
+        }
+      });
+      var canvas = document.getElementById("liveGraph");
+      var ctx = canvas.getContext("2d");
+      var chart = new Chart(ctx, {
+        type: "line",
+        data: {
+          labels: ["Neutral", "Negative", "Positive", "Compound"],
+          datasets: [
+            {
+              label: "User Behaviour",
+              data: [],
+              borderColor: "lightgreen",
+              borderWidth: 2,
+              fill: false,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          scales: {
+            x: {
+              display: true,
+              title: {
+                display: true,
+                text: "Sentiment",
+              },
+            },
+            y: {
+              display: true,
+              title: {
+                display: true,
+                text: "Value",
+              },
+            },
+          },
+        },
+      });
+      function updateGraph(values) {
+      chart.data.datasets[0].data = values;
+        chart.update();
+      }
+    </script>
+  </body>
+</html>
