@@ -70,7 +70,7 @@ Follow these steps to get started with Mohi's Bot:
    python bot.py
    ```
 
-6. Access the chatbot in your web browser by visiting [http://localhost:5000](http://localhost:5000).
+6. Access the chatbot in your web browser by visiting [http://localhost:5000](http://localhost:8000).
 
 ## Configuration
 
